@@ -1,0 +1,27 @@
+.nextBtn {
+  position: absolute;
+  top: 14.5rem;
+  right: -1rem;
+  transform: rotate(180deg);
+}
+
+.prevBtn {
+  position: absolute;
+  top: 14.5rem;
+  left: -1rem;
+  transform: rotate(180deg);
+}
+
+
+.prevBtn button,
+.nextBtn button {
+  border: none;
+  cursor: pointer;
+  width: 2.5rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+
+svg:hover path {
+  stroke: hsl(26, 100%, 55%);
+}

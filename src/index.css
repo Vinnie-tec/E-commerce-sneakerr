@@ -1,0 +1,56 @@
+/* resetting */
+*::before,
+*,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Primary colors */
+:root {
+  --orange: hsl(26, 100%, 55%);
+  --pale-orange: hsl(25, 100%, 94%);
+}
+
+/* Neutral colors */
+:root {
+  --very-dark-blue: hsl(220, 13%, 13%);
+  --dark-grayish-blue: hsl(219, 9%, 45%);
+  --grayish-blue: hsl(220, 14%, 75%);
+  --light-grayish-blue: hsl(223, 64%, 98%);
+  --White: hsl(0, 0%, 100%);
+  /* --Black (with 75% opacity for lightbox background): hsl(0, 0%, 0%) */
+}
+
+body {
+  font-family: 'Kumbh Sans', sans-serif;
+  -webkit-tap-highlight-color: transparent;
+  overflow: hidden;
+}
+
+.hoverClass:hover {
+  opacity:var(--opacity) !important;
+}
+
+.slide {
+  position: absolute;
+  margin-left: auto; 
+  margin-right: auto;
+  text-align: center;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition: opacity ease-in-out 0.5s;
+}
+
+.slide img {
+  width: 25rem;
+  height: 400px;
+  object-fit: cover;
+  border-radius: .8rem;
+}
+
+.active-animate {
+  opacity: 1;
+}

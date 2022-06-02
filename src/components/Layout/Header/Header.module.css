@@ -1,0 +1,32 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 8rem;
+  padding: 3rem 0;
+  border-bottom: 1px solid hsl(0, 0%, 87%);
+  height: 2rem;
+}
+
+.header_a,
+.header_b {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header_b span {
+  color: hsl(219, 9%, 45%);
+}
+
+.header img {
+  width: 2.5rem;
+  aspect-ratio: 1;  
+  margin-left: 1.5rem;
+  border-radius: 50%;
+  border: 3px solid transparent;
+}
+
+.header img:hover {
+  border-color: hsl(26, 100%, 55%);
+}

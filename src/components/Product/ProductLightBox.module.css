@@ -1,0 +1,42 @@
+.gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.image {
+  max-width: 700px;
+  height: 430px;
+  margin: 2rem 0 0 0;
+  overflow: hidden;
+}
+
+
+.images {
+  display: flex;
+  justify-content: space-between;
+  width: 25rem;
+  height: auto;
+}
+
+.images img {
+  border-radius: .8rem;
+  width: 5rem;
+  height: 5rem;
+  cursor: pointer;
+}
+
+.closeBtn button {
+  position: absolute;
+  top: 0;
+  left: 25.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.closeBtn button svg:hover path {
+  fill: hsl(26, 100%, 55%)
+}
