@@ -1,28 +1,39 @@
+import { useContext } from "react";
 import React from "react";
 import AddToCart from "../Cart/AddToCart";
+import CartContext from '../../store/cart-context';
 
 import styling from './ProductInfo.module.css';
 
-const ProductInfo = () => {
+
+const ProductInfo = (props) => {
+  const context = useContext(CartContext);
+  const price = `# ${props.price.toFixed(2)}`
+
+  const addToCartHandler = count => {
+    context.addItem({
+      id: props.id,
+      title: props.title,
+      amount: count,
+      price: props.price
+    })
+  }
+  
   return (
     <div className={styling.aside}>
       <div className={styling.product_info}>
         <h4>Sneaker Company</h4>
-        <h2>Fall Limited Edition Sneakers</h2>
-        <p>
-          These low-profile sneakers are your perfect casual wear companion.
-          Featuring a durable rubber outer sole, they’ll withstand everything
-          the weather can offer.
-        </p>
+        <h2>{props.title}</h2>
+        <p>{props.description}</p>
       </div>
       
       <div className={styling.pricing_info}>
         <h4>
-          $125.00 <span>50%</span>
+         {price} <span>50%</span>
         </h4>
-        <p>$250.00</p>
+        <p>{price}</p>
       </div>
-      <AddToCart />
+      <AddToCart onAddToCart={addToCartHandler}/>
     </div>
   );
 };

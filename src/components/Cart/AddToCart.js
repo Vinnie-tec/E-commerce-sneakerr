@@ -17,8 +17,10 @@ const AddToCart = (props) => {
   const addToCartHandler = (e) => {
     e.preventDefault();
 
-    if (count.trim().length === 0) {
+    if (count === 0) {
       return;
+    } else {
+      setCount(0)
     }
     props.onAddToCart(count)
   }

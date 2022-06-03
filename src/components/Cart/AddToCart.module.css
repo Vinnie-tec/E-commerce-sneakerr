@@ -1,5 +1,7 @@
 .addToCart {
   display: flex;
+  max-width: 21.5rem;
+
 }
 
 .toggleButton {

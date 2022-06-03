@@ -11,10 +11,17 @@
   border-bottom: 1px solid hsl(0, 0%, 87%);
 }
 
+.items {
+  scroll-behavior: smooth;
+  max-height: 15rem; 
+  overflow-y: scroll;
+}
+
 .cart .main {
   display: flex;
   justify-content: space-between;
-  margin: 2rem 2rem 2rem 0;
+  padding: 1rem 1rem 1rem 0;
+  border-bottom: 1px solid hsl(0, 0%, 87%);
 }
 
 .closeButton button {

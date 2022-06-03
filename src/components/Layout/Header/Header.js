@@ -6,26 +6,25 @@ import CartContext from "../../../store/cart-context";
 import ProfilePix from "../../Assests/images/image-avatar.png";
 import HeaderLogo from "./HeaderLogo";
 import HeaderNav from "./HeaderNav";
-import CartShop from "../../Cart/CartShop";
+import Cart from "../../Cart/Cart";
 
 import styling from "./Header.module.css";
 
 const Header = () => {
   const context = useContext(CartContext);
 
-  const numberOfCartItems = context.items.reduce((currentNumber, item) => {
+  const {items} = context;
+
+  const numberOfCartItems = items.reduce((currentNumber, item) => {
     return currentNumber + item.amount;
   }, 0)
 
   const [showCart, setShowCart] = useState(false);
 
   const showCartHandler = () => {
-    setShowCart(true);
+    setShowCart(showCart => !showCart);
   };
 
-  const closeCartHandler = () => {
-    setShowCart(false);
-  };
   return (
     <header className={styling.header}>
       <div className={styling.header_a}>
@@ -38,7 +37,7 @@ const Header = () => {
             <CartIcon />
             <span>{numberOfCartItems}</span>
           </button>
-          <div className={styling.cartItems}>{showCart && <CartShop onClose={closeCartHandler} />}</div>
+          <div className={styling.cartItems}>{showCart && <Cart />}</div>
         </div>
         
         <div role="img" aria-label="Profile picture">
