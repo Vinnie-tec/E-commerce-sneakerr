@@ -1,0 +1,45 @@
+.cart {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+}
+
+.cart h2 {
+  padding: 1rem 2rem;
+  border-bottom: 1px solid hsl(0, 0%, 87%);
+}
+
+.cart .main {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 2rem 2rem 0;
+}
+
+.closeButton button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.closeButton button img:hover {
+  border-color: transparent;
+}
+
+.checkoutBtn {
+  margin: 0 2rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  outline: none;
+  border: none;
+  background-color: hsl(26, 100%, 55%);
+  color: #fff;
+  font-weight: 700;
+  opacity: 1;
+  cursor: auto;
+}
+
+.checkoutBtn:hover {
+  opacity: .8;
+}

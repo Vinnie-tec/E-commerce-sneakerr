@@ -5,14 +5,22 @@ import styling from "./AddToCart.module.css";
 import AddBtn from "../Assests/icon-plus.svg";
 import SubtractBtn from "../Assests/icon-minus.svg";
 
-const AddToCart = () => {
+const AddToCart = (props) => {
   const [count, setCount] = useState(0);
 
   var increment = () => setCount(count + 1);
   var decrement = () => setCount(count - 1);
-
   if (count <= 0) {
     decrement = () => setCount(0);
+  }
+
+  const addToCartHandler = (e) => {
+    e.preventDefault();
+
+    if (count.trim().length === 0) {
+      return;
+    }
+    props.onAddToCart(count)
   }
 
   return (
@@ -26,7 +34,7 @@ const AddToCart = () => {
           <img src={AddBtn} alt="plus icon" onClick={increment} />
         </button>
       </div>
-      <button className={styling.addButton}>
+      <button className={styling.addButton} onClick={addToCartHandler}>
         <span>
           <CartIcon />
         </span>

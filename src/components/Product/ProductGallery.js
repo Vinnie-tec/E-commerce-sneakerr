@@ -1,11 +1,12 @@
 import React, { Fragment, useState } from "react";
 import styling from "./ProductGallery.module.css";
 
-import images from "../../store/image";
+import Images from "../../store/image";
+
+const [  {image} ] = Images; //getting the first image in the list
 
 const ProductGallery = (props) => {
-  const [clickedImg, setClickedImg] = useState(images[0]);
-
+  const [clickedImg, setClickedImg] = useState(image);
 
   return (
     <Fragment>
@@ -15,7 +16,7 @@ const ProductGallery = (props) => {
         </div>
 
         <div className={styling.images}>
-          {images.map((image, index) => (
+          {Images.map(({image}, index) => (
             <img
               key={index}
               src={image}
