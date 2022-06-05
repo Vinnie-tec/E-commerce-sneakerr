@@ -4,18 +4,17 @@ import BtnSlider from "../UI/BtnSlider";
 import Modal from "../UI/Modal";
 import styling from "./ProductLightBox.module.css";
 
-import dataSlider from "../../store/dataSlider";
-import images from "../../store/image";
+import images from "../../store/Data";
 
 function ProductLightBox(props) {
   const [slideIndex, setSlideIndex] = useState(1);
 
   const nextSlide = () => {
-    setSlideIndex(slideIndex !== dataSlider.length ? slideIndex + 1 : 1);
+    setSlideIndex(slideIndex !== images.length ? slideIndex + 1 : 1);
   };
 
   const  prevSlide = () => {
-    setSlideIndex(slideIndex !== 1 ? slideIndex - 1 : dataSlider.length);
+    setSlideIndex(slideIndex !== 1 ? slideIndex - 1 : images.length);
   };
 
   const moveDot = (index) => {
@@ -39,7 +38,7 @@ function ProductLightBox(props) {
             </button>
           </div>
           
-          {dataSlider.map((data, index) => {
+          {images.map((data, index) => {
             return (
               <div
                 key={data.id}
@@ -60,11 +59,11 @@ function ProductLightBox(props) {
         </div>
 
         <div className={styling.images}>
-          {images.map((img, index) => (
+          {images.map(({image}, index) => (
             <div>
               <img
                 key={index}
-                src={img}
+                src={image}
                 alt="Shoes"
                 onClick={() => moveDot(index + 1)}
                 className={"hoverClass"} //for the hover state

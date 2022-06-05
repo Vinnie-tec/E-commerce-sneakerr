@@ -22,6 +22,7 @@ const CartShop = (props) => {
           title={item.title}
           amount={item.amount}
           price={item.price}
+          image={item.image}
           onDelete={cartItemDeleteHandler.bind(null, item.id)}
         />
       ))}

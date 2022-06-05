@@ -15,7 +15,8 @@ const ProductInfo = (props) => {
       id: props.id,
       title: props.title,
       amount: count,
-      price: props.price
+      price: props.price,
+      image: props.image,
     })
   }
   

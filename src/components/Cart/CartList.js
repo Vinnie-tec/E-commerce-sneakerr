@@ -6,10 +6,15 @@ import DelIcon from "../Assests/icon-delete.svg";
 const CartList = (props) => {
 
   const price = `# ${props.price.toFixed(2)}`
+  const amount = props.amount;
+
+  const itemPrice = props.price * amount;
+
+
   return (
       <div className={styling.main}>
         <div className={styling.img}>
-          <img src="www.jpg" alt="img" />
+          <img src={props.image} alt="img" />
         </div>
 
         <div className={styling.info}>
@@ -18,7 +23,7 @@ const CartList = (props) => {
             <span>
               {price}  X{props.amount}
             </span>{" "}
-            <span>{343}</span>
+            <span>{itemPrice}</span>
           </div>
         </div>
 

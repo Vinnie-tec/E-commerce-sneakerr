@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ProductInfo from "./ProductInfo";
 import styling from "./ProductGallery.module.css";
 
-import Data from "../../store/image";
+import Data from "../../store/Data";
 
 // import CartContext from "../../store/cart-context";
 
@@ -56,6 +56,7 @@ const ProductGallery = (props) => {
           description={allInfo.description}
           id={allInfo.id}
           price={allInfo.price}
+          image={allInfo.image}
         />
       </div>
     </main>
