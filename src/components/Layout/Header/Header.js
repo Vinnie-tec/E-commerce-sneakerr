@@ -13,16 +13,16 @@ import styling from "./Header.module.css";
 const Header = () => {
   const context = useContext(CartContext);
 
-  const {items} = context;
+  const { items } = context;
 
   const numberOfCartItems = items.reduce((currentNumber, item) => {
     return currentNumber + item.amount;
-  }, 0)
+  }, 0);
 
   const [showCart, setShowCart] = useState(false);
 
   const showCartHandler = () => {
-    setShowCart(showCart => !showCart);
+    setShowCart((showCart) => !showCart);
   };
 
   return (
@@ -37,9 +37,11 @@ const Header = () => {
             <CartIcon />
             <span>{numberOfCartItems}</span>
           </button>
-          <div className={styling.cartItems}>{showCart && <Cart />}</div>
+          <div className={styling.cartItems}>
+            {showCart && <Cart onCancel={showCartHandler} cartNumber={numberOfCartItems} />}
+          </div>
         </div>
-        
+
         <div role="img" aria-label="Profile picture">
           <img src={ProfilePix} alt="ProfilePix" />
         </div>
