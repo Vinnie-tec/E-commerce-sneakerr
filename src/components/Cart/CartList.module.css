@@ -1,0 +1,46 @@
+.main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1rem 1rem 0;
+  border-bottom: 1px solid hsl(0, 0%, 87%);
+  max-height: 14rem;
+}
+
+.main .img img {
+  border-radius: .5rem;
+  margin-right: .8rem;
+}
+
+.main .img img:hover {
+  border-color: transparent;
+}
+
+.info h3 {
+  font-size: 1rem;
+  opacity: .6;
+}
+
+.info .spans .spanA { 
+  font-size: 1rem;
+  opacity: .6;
+}
+
+.info .spans .spanB {
+  font-weight: 700;
+}
+
+.closeButton button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.closeButton button img {
+  width: 1.6rem;
+  border-radius: .5rem;
+  aspect-ratio: 1;
+}
+
+.closeButton button img:hover {
+  border-color: transparent;
+}

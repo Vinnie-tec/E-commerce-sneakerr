@@ -38,10 +38,10 @@ const ProductGallery = (props) => {
               className={"hoverClass"}
               style={{
                 border:
-                  allInfo.image === props.image
-                    ? "2px solid hsl(26, 100%, 55%)"
+                  allInfo.image === data.image
+                    ? "3px solid hsl(26, 100%, 55%)"
                     : "",
-                opacity: allInfo.image === props.image ? 0.5 : 1,
+                opacity: allInfo.image === data.image ? 0.5 : 1,
                 "--opacity": 0.5,
               }}
             />

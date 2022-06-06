@@ -1,6 +1,6 @@
 .main {
-  display: flex;
-  justify-content: center;
+  /* display: flex; */
+  justify-content: space-between;
   align-items: center;
-  margin: 0 5rem;
+  margin: 0 6rem;
 }

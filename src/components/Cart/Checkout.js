@@ -98,34 +98,36 @@ const Checkout = (props) => {
   //////////////////////////////////////////////////////////////
   return (
     <form className={styling.form} onSubmit={confirmHandler}>
-      <div className={nameControlClasses}>
-        <label htmlFor="name">Enter Your Name</label>
-        <input type="text" id="name" ref={nameInputRef} />
-        {!formInputValidity.name && <p>Please enter a valid name</p>}
+      <div className={styling.scroll}>
+        <div className={nameControlClasses}>
+          <label htmlFor="name">Enter Your Name</label>
+          <input type="text" id="name" ref={nameInputRef} />
+          {!formInputValidity.name && <p>Please enter a valid name</p>}
+        </div>
+
+        <div className={cityControlClasses}>
+          <label htmlFor="city">Enter your City</label>
+          <input type="text" id="city" ref={cityInputRef} />
+          {!formInputValidity.city && <p>Please enter a valid City Name</p>}
+        </div>
+
+        <div className={postalCodeControlClasses}>
+          <label htmlFor="postal">Enter Your Postal Code</label>
+          <input type="text" id="postal" ref={postalCodeInputRef} />
+          {!formInputValidity.postalCode && (
+            <p>Please enter a valid postal code</p>
+          )}
+        </div>
+
+        <div className={addressControlClasses}>
+          <label htmlFor="address">Enter Your Address</label>
+          <input type="text" id="address" ref={addressInputRef} />
+          {!formInputValidity.address && <p>Please enter a valid address</p>}
+        </div>
       </div>
 
-      <div className={cityControlClasses}>
-        <label htmlFor="city">Enter your City</label>
-        <input type="text" id="city" ref={cityInputRef} />
-        {!formInputValidity.city && <p>Please enter a valid City Name</p>}
-      </div>
-
-      <div className={postalCodeControlClasses}>
-        <label htmlFor="postal">Enter Your Postal Code</label>
-        <input type="text" id="postal" ref={postalCodeInputRef} />
-        {!formInputValidity.postalCode && (
-          <p>Please enter a valid postal code</p>
-        )}
-      </div>
-
-      <div className={addressControlClasses}>
-        <label htmlFor="address">Enter Your Address</label>
-        <input type="text" id="address" ref={addressInputRef} />
-        {!formInputValidity.address && <p>Please enter a valid address</p>}
-      </div>
-
-      <div className={styling.actions}>
-        <button type="button" onClick={props.onClose}>
+      <div className={styling.btnActions}>
+        <button type="button" onClick={props.onClose} className={styling.cancel}>
           Cancel
         </button>
         {canCheckout && <button className={styling.submit}>Confirm</button>}

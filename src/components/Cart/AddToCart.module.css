@@ -1,6 +1,6 @@
 .addToCart {
   display: flex;
-  max-width: 21.5rem;
+  max-width: 23.5rem;
 
 }
 
@@ -29,11 +29,11 @@
 
 .addButton {
   background-color: hsl(26, 100%, 55%);
-  padding: 1rem 1rem;
+  padding: 1rem 3rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 15rem;
+  width: 19rem;
   border: none;
   border-radius: .5rem;
   cursor: pointer;
@@ -47,4 +47,6 @@
 .addButton span {
   color: hsl(0, 0%, 100%);
   font-weight: 700;
+  margin-left: 1rem;
+
 }

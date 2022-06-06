@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import CartList from "./CartList";
 import CheckOutForm from "./Checkout";
 
@@ -7,6 +7,15 @@ import styling from "./Cart.module.css";
 import CartContext from "../../store/cart-context";
 
 const Cart = (props) => {
+  const [isEmpty, setIsEmpty] = useState(false);
+  useEffect(() => {
+    if (props.cartNumber === 0) {
+      setIsEmpty(true);
+    } else {
+      setIsEmpty(false);
+    }
+  }, [props.cartNumber]);
+
   const [CheckedOut, setCheckedOut] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [didSubmit, setDidSubmit] = useState(false);
@@ -14,7 +23,7 @@ const Cart = (props) => {
   const context = useContext(CartContext);
   const totalAmount = `$ ${context.totalAmount.toFixed(2)}`; // getting the total amount value from the cart context
 
-  const cartItemDeleteHandler = (id) => { 
+  const cartItemDeleteHandler = (id) => {
     context.deleteItem(id);
   };
 
@@ -34,11 +43,12 @@ const Cart = (props) => {
     </div>
   );
 
-  const onCheckoutHandler = () => { //enable the checkout button only if there is an item present in
+  const onCheckoutHandler = () => {
+    //enable the checkout button only if there is an item present in
     if (props.cartNumber === 0) {
       setCheckedOut(false);
     } else {
-      setCheckedOut(true)
+      setCheckedOut(true);
     }
   };
 
@@ -60,6 +70,12 @@ const Cart = (props) => {
     context.clearCart();
   };
 
+  const isEmptyModal = (
+    <div className={styling.emptyDiv}>
+      <p>Your cart is empty.</p>
+    </div>
+  );
+
   // CART INFO
   const cartModalContent = (
     <React.Fragment>
@@ -69,7 +85,11 @@ const Cart = (props) => {
         <span>{totalAmount}</span>
       </div>
       {CheckedOut && (
-        <CheckOutForm onClose={props.onCancel} onConfirm={submitOrderHandler} cartNumber={props.cartNumber} />
+        <CheckOutForm
+          onClose={props.onCancel}
+          onConfirm={submitOrderHandler}
+          cartNumber={props.cartNumber}
+        />
       )}
       {!CheckedOut && (
         <button className={styling.checkoutBtn} onClick={onCheckoutHandler}>
@@ -96,8 +116,9 @@ const Cart = (props) => {
 
   return (
     <div className={styling.cart}>
-      <h2>Cart</h2>
-      {!isSubmitting && !didSubmit && cartModalContent}
+      <h4>Cart</h4>
+      {isEmpty && isEmptyModal}
+      {!isEmpty && !isSubmitting && !didSubmit && cartModalContent}
       {isSubmitting && isSubmittingModalContent}
       {!isSubmitting && didSubmit && didSubmittingModalContent}
     </div>
