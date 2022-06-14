@@ -9,13 +9,16 @@ import styling from './ProductInfo.module.css';
 const ProductInfo = (props) => {
   const context = useContext(CartContext);
   const price = `# ${props.price.toFixed(2)}`
+  const discountprice = (props.discount / 100) * props.price
+  const discountPrice = `# ${discountprice}`
+ 
 
   const addToCartHandler = count => {
     context.addItem({
       id: props.id,
       title: props.title,
       amount: count,
-      price: props.price,
+      price: discountprice,
       image: props.image,
     })
   }
@@ -30,7 +33,7 @@ const ProductInfo = (props) => {
       
       <div className={styling.pricing_info}>
         <h4>
-         {price} <span>50%</span>
+         {discountPrice} <span>{`${props.discount} %`}</span>
         </h4>
         <p>{price}</p>
       </div>

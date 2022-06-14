@@ -21,7 +21,7 @@ const Cart = (props) => {
   const [didSubmit, setDidSubmit] = useState(false);
 
   const context = useContext(CartContext);
-  const totalAmount = `$ ${context.totalAmount.toFixed(2)}`; // getting the total amount value from the cart context
+  const totalAmount = `# ${context.totalAmount.toFixed(2)}`; // getting the total amount value from the cart context
 
   const cartItemDeleteHandler = (id) => {
     context.deleteItem(id);
@@ -81,7 +81,7 @@ const Cart = (props) => {
     <React.Fragment>
       {cartItems}
       <div className={styling.total}>
-        <span>Total Amount</span>
+        <span>Total Amount:  </span>
         <span>{totalAmount}</span>
       </div>
       {CheckedOut && (

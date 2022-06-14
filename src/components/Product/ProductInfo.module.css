@@ -46,8 +46,10 @@
 }
 
 .pricing_info p {
-  font-size: .6rem;
+  font-size: .7rem;
   opacity: .6;
   margin-bottom: 2rem;
+  margin-top: .5em;
+  text-decoration: line-through;
 }
 

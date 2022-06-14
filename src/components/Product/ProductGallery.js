@@ -4,14 +4,6 @@ import styling from "./ProductGallery.module.css";
 
 import Data from "../../store/Data";
 
-// import CartContext from "../../store/cart-context";
-
-let [first_Element] = Data; //puling out the first object
-
-if (!Array.isArray(first_Element)) {
-  first_Element = [first_Element];
-} // converting back to an array like object
-
 const ProductGallery = (props) => {
   const [allInfo, setAllInfo] = useState({
     id: Data[0].id,
@@ -19,6 +11,7 @@ const ProductGallery = (props) => {
     title: Data[0].title,
     description: Data[0].description,
     price: Data[0].price,
+    discount: Data[0].discount,
   });
 
   return (
@@ -57,6 +50,7 @@ const ProductGallery = (props) => {
           id={allInfo.id}
           price={allInfo.price}
           image={allInfo.image}
+          discount={allInfo.discount}
         />
       </div>
     </main>
