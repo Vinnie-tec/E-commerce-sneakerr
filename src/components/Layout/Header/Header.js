@@ -10,6 +10,7 @@ import HeaderNav from "./HeaderNav";
 import Cart from "../../Cart/Cart";
 
 import styling from "./Header.module.css";
+import HeaderNavMobile from "./HeaderNavMobile";
 
 const Header = () => {
   const context = useContext(CartContext);
@@ -31,7 +32,7 @@ const Header = () => {
       <div className={styling.mobileMenuBtn}>
         <HeaderMenu />
         <div className="mobileMenu">
-
+          <HeaderNavMobile />
         </div>
       </div>
       <div className={styling.header_a}>

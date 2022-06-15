@@ -10,15 +10,20 @@
 html {
   overflow: scroll;
   overflow-x: hidden;
-  scrollbar-width: none; /*Firefox*/
+  scrollbar-width: none;
+  /*Firefox*/
   -ms-overflow-style: none;
+  font-family: 'Kumbh Sans', sans-serif;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* other browser */
 html::-webkit-scrollbar {
-  width: 0rem;  /* Remove scrollbar space */
+  width: 0rem;
+  /* Remove scrollbar space */
   height: 0rem;
-  background: transparent;  /* Optional: just make scrollbar invisible */
+  background: transparent;
+  /* Optional: just make scrollbar invisible */
 }
 
 /* Primary colors */
@@ -37,20 +42,13 @@ html::-webkit-scrollbar {
   /* --Black (with 75% opacity for lightbox background): hsl(0, 0%, 0%) */
 }
 
-body {
-  font-family: 'Kumbh Sans', sans-serif;
-  -webkit-tap-highlight-color: transparent;
-}
-
-
-
 .hoverClass:hover {
-  opacity:var(--opacity) !important;
+  opacity: var(--opacity) !important;
 }
 
 .slide {
   position: absolute;
-  margin-left: auto; 
+  margin-left: auto;
   margin-right: auto;
   text-align: center;
   left: 0;
@@ -68,4 +66,13 @@ body {
 
 .active-animate {
   opacity: 1;
+}
+
+/* Links */
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: inherit;
 }
