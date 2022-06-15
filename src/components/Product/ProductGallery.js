@@ -42,7 +42,7 @@ const ProductGallery = (props) => {
         </div>
       </div>
 
-      <div className={styling.info}>
+      <div >
         <ProductInfo
           key={allInfo.id}
           title={allInfo.title}

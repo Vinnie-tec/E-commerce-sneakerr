@@ -5,6 +5,7 @@ import CartContext from "../../../store/cart-context";
 
 import ProfilePix from "../../Assests/images/image-avatar.png";
 import HeaderLogo from "./HeaderLogo";
+import HeaderMenu from "./HeaderMenu";
 import HeaderNav from "./HeaderNav";
 import Cart from "../../Cart/Cart";
 
@@ -27,6 +28,12 @@ const Header = () => {
 
   return (
     <header className={styling.header}>
+      <div className={styling.mobileMenuBtn}>
+        <HeaderMenu />
+        <div className="mobileMenu">
+
+        </div>
+      </div>
       <div className={styling.header_a}>
         <HeaderLogo />
         <HeaderNav />
@@ -38,7 +45,9 @@ const Header = () => {
             <span>{numberOfCartItems}</span>
           </button>
           <div className={styling.cartItems}>
-            {showCart && <Cart onCancel={showCartHandler} cartNumber={numberOfCartItems} />}
+            {showCart && (
+              <Cart onCancel={showCartHandler} cartNumber={numberOfCartItems} />
+            )}
           </div>
         </div>
 

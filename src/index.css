@@ -7,6 +7,20 @@
   padding: 0;
 }
 
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+  scrollbar-width: none; /*Firefox*/
+  -ms-overflow-style: none;
+}
+
+/* other browser */
+html::-webkit-scrollbar {
+  width: 0rem;  /* Remove scrollbar space */
+  height: 0rem;
+  background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
 /* Primary colors */
 :root {
   --orange: hsl(26, 100%, 55%);
@@ -26,8 +40,9 @@
 body {
   font-family: 'Kumbh Sans', sans-serif;
   -webkit-tap-highlight-color: transparent;
-  overflow: hidden;
 }
+
+
 
 .hoverClass:hover {
   opacity:var(--opacity) !important;

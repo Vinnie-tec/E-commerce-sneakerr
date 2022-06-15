@@ -2,17 +2,16 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  align-content: center;
-  margin: 0 5rem;
+  margin: 2rem 5rem;
 }
 
 .gallery {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .image {
-  margin: 2rem 0;
   margin-bottom: 0;
 }
 
@@ -28,7 +27,6 @@
   display: flex;
   justify-content: space-between;
   width: 25rem;
-  margin: 1rem 0;
 }
 
 .images img {
@@ -38,3 +36,38 @@
   cursor: pointer;
 }
 
+@media (max-width: 1100px) {
+  .main {
+    justify-content: space-between;
+    margin: 3rem -1rem !important;
+    gap: 5rem;
+  }
+
+  .gallery {
+    width: 40%;
+  }
+
+  .image img,
+  .images img {
+    width: 95%;
+    height: 95%;
+  }
+
+  .images {
+    margin-top: 0;
+    width: 95%;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 730px) {
+ .main {
+  flex-direction: column;
+  gap: 2rem;
+ }
+
+ .gallery {
+  width: 60%;
+  margin-top: 0rem;
+ }
+}
