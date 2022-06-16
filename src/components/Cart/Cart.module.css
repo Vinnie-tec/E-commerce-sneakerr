@@ -5,6 +5,8 @@
   padding: 0;
   margin: 0;
   max-height: 21rem;
+  animation: slide-down 1000ms ease-out forwards;
+  z-index: 1000 !important;
 }
 
 .cart h4 {
@@ -14,7 +16,7 @@
 
 .items {
   scroll-behavior: smooth;
-  height: 15rem; 
+  height: 15rem;
   overflow-y: scroll;
 }
 
@@ -22,7 +24,6 @@
   margin: .4rem 1rem .4rem 2rem;
   font-size: .6rem;
   opacity: .7;
-
 }
 
 .checkoutBtn {
@@ -49,4 +50,24 @@
   justify-content: center;
   height: 14rem;
   font-weight: 700;
+}
+
+/* ANIMATION */
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateX(-5rem);
+    
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 375px) {
+  .cart {
+    max-height: 17rem;
+  }
 }

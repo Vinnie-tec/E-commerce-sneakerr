@@ -6,11 +6,11 @@ import CartContext from "../../../store/cart-context";
 import ProfilePix from "../../Assests/images/image-avatar.png";
 import HeaderLogo from "./HeaderLogo";
 import HeaderMenu from "./HeaderMenu";
+import HeaderNavMobile from "./HeaderNavMobile";
 import HeaderNav from "./HeaderNav";
 import Cart from "../../Cart/Cart";
 
 import styling from "./Header.module.css";
-import HeaderNavMobile from "./HeaderNavMobile";
 
 const Header = () => {
   const context = useContext(CartContext);
@@ -22,30 +22,40 @@ const Header = () => {
   }, 0);
 
   const [showCart, setShowCart] = useState(false);
+  const [openMenu, setOpenMenu] = useState(false);
 
   const showCartHandler = () => {
     setShowCart((showCart) => !showCart);
   };
 
+  const onOpenMenu = () => setOpenMenu(true);
+  const onCloseMenu = () => setOpenMenu(false);
+
   return (
     <header className={styling.header}>
+      {/* Mobile Nav Menu */}
       <div className={styling.mobileMenuBtn}>
-        <HeaderMenu />
-        <div className="mobileMenu">
-          <HeaderNavMobile />
-        </div>
+        <button className={styling.btnIcon} onClick={onOpenMenu}>
+          <HeaderMenu />
+        </button>
+        {openMenu && (
+          <div className={styling.mobileMenu}>
+            <HeaderNavMobile onClose={onCloseMenu} />
+          </div>
+        )}
       </div>
+
       <div className={styling.header_a}>
         <HeaderLogo />
         <HeaderNav />
       </div>
       <div className={styling.header_b}>
-        <div className={styling.cart}>
+        <div className={styling.cartBadge}>
           <button className={styling.btnIcon} onClick={showCartHandler}>
             <CartIcon />
             <span>{numberOfCartItems}</span>
           </button>
-          <div className={styling.cartItems}>
+          <div className={styling.cartBox}>
             {showCart && (
               <Cart onCancel={showCartHandler} cartNumber={numberOfCartItems} />
             )}

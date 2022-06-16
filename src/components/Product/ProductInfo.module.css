@@ -4,6 +4,7 @@
   justify-content: center;
   margin-left: -4rem;
   max-width: 26.5rem;
+  
 }
 
 .product_info {
@@ -16,10 +17,12 @@
   font-size: .8rem;
   font-weight: 700;
   color: hsl(26, 100%, 55%);
+  
 }
 
 .product_info h2 {
   font-size: 2.35rem;
+  animation: slide-down 1000ms ease-out forwards;
 }
 
 .product_info p {
@@ -28,12 +31,14 @@
   word-spacing: .3rem;
   line-height: 1rem;
   opacity: .6;
+  animation: slide-down 1000ms ease-out forwards;
 }
 
 .pricing_info h4 {
   display: flex;
   align-items: center;
   font-size: 1.2rem;
+  
 }
 
 .pricing_info h4 span {
@@ -43,6 +48,7 @@
   margin-left: .5rem;
   padding: .2rem;
   border-radius: .3rem;
+  
 }
 
 .pricing_info p {
@@ -51,6 +57,20 @@
   margin-bottom: 2rem;
   margin-top: .5em;
   text-decoration: line-through;
+}
+
+/* ANIMATION */
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateX(5rem);
+    
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @media (max-width: 1100px) {
@@ -75,9 +95,35 @@
   @media (max-width: 730px) {
     .aside {
       flex-direction: column;
-      width: 100%;
       margin-left: 0;
     }
+  }
+
+  @media (max-width: 375px) {
+    .aside {
+      position: absolute;
+      top: 25rem;
+      margin: 0 1rem;
+      width: 22rem;
+    }
+
+    .product_info p {
+      font-size: .9rem;
+    }
+
+    .pricing_info {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding: 1rem 0;
+    }
+  }
+
+  .pricing_info h4,
+  .pricing_info p {
+    margin-bottom: 0;
+    padding: 0;
+    font-weight: 700;
   }
 
 }

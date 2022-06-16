@@ -25,10 +25,19 @@ const leftSvgBtn = (
   </svg>
 );
 
-const BtnSlider = ({ direction, moveSlide }) => {
-  console.log(direction, moveSlide);
+export const BtnSliderR = ({ direction, moveSlide }) => {
   return (
     <div className={direction === "next" ? styling.nextBtn : styling.prevBtn}>
+      <button onClick={moveSlide}>
+        {direction === "prev" ? leftSvgBtn : rightSvgBtn}
+      </button>
+    </div>
+  )
+}
+
+const BtnSlider = ({ direction, moveSlide }) => {
+  return (
+    <div className={direction === "next" ? styling.nextBtnN : styling.prevBtnN}>
       <button onClick={moveSlide}>
         {direction === "prev" ? leftSvgBtn : rightSvgBtn}
       </button>

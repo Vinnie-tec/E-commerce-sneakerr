@@ -14,7 +14,10 @@
 
 
 .prevBtn button,
-.nextBtn button {
+.nextBtn button,
+.prevBtnN button,
+.nextBtnN button 
+{
   border: none;
   cursor: pointer;
   width: 2.5rem;
@@ -24,4 +27,19 @@
 
 .svg:hover path {
   stroke: hsl(26, 100%, 55%);
+}
+
+/* MOBILE SLIDER */
+.nextBtnN {
+  position: absolute;
+  top: 13.5rem;
+  right: 2.5rem;
+  transform: rotate(180deg);
+}
+
+.prevBtnN {
+  position: absolute;
+  top: 13.5rem;
+  left: 2.5rem;
+  transform: rotate(180deg);
 }

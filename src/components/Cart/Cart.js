@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState, useEffect, Fragment } from "react";
 import CartList from "./CartList";
 import CheckOutForm from "./Checkout";
 
@@ -81,7 +81,7 @@ const Cart = (props) => {
     <React.Fragment>
       {cartItems}
       <div className={styling.total}>
-        <span>Total Amount:  </span>
+        <span>Total Amount: </span>
         <span>{totalAmount}</span>
       </div>
       {CheckedOut && (
@@ -115,13 +115,16 @@ const Cart = (props) => {
   );
 
   return (
-    <div className={styling.cart}>
-      <h4>Cart</h4>
-      {isEmpty && isEmptyModal}
-      {!isEmpty && !isSubmitting && !didSubmit && cartModalContent}
-      {isSubmitting && isSubmittingModalContent}
-      {!isSubmitting && didSubmit && didSubmittingModalContent}
-    </div>
+    <>
+        <div className={styling.cart}>
+          <h4>Cart</h4>
+          {isEmpty && isEmptyModal}
+          {!isEmpty && !isSubmitting && !didSubmit && cartModalContent}
+          {isSubmitting && isSubmittingModalContent}
+          {!isSubmitting && didSubmit && didSubmittingModalContent}
+        </div>
+      
+    </>
   );
 };
 

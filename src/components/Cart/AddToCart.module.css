@@ -10,7 +10,6 @@
   justify-content: center;
   margin-right: 1rem;
   border-radius: .5rem;
-
 }
 
 .toggleButton button {
@@ -37,6 +36,7 @@
   border-radius: .5rem;
   cursor: pointer;
   opacity: 1;
+  transition: all .5s ease-in-out
 }
 
 .addButton:hover {
@@ -52,19 +52,41 @@
 
 @media (max-width: 1100px) {
   .addButton {
-    padding: 1.2rem 0rem; 
+    padding: 1.2rem 0rem;
   }
 }
 
 @media (max-width: 730px) {
-.addButton {
-  padding: 1.2rem 0rem;
-  justify-content: space-around;
-  height: 2rem;
+  .addButton {
+    padding: 1.2rem 0rem;
+    justify-content: space-around;
+    height: 2rem;
+  }
+
+  .addButton span {
+    word-wrap: normal;
+    margin: 0;
+  }
 }
 
-.addButton span {
-  word-wrap: normal;
-  margin: 0;
+@media (max-width: 375px) {
+  .addToCart {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+
+  .toggleButton {
+    width: 100%;
+    justify-content: space-between;
+    padding: .8rem 0;
+  }
+
+  .addButton {
+    padding: 1.2rem 0rem;
+    justify-content: center;
+    width: 100%;
+  }
 }
- }

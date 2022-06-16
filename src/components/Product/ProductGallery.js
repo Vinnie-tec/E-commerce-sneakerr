@@ -3,6 +3,7 @@ import ProductInfo from "./ProductInfo";
 import styling from "./ProductGallery.module.css";
 
 import Data from "../../store/Data";
+import MobileImageSlider from "./MobileImageSlider";
 
 const ProductGallery = (props) => {
   const [allInfo, setAllInfo] = useState({
@@ -16,6 +17,9 @@ const ProductGallery = (props) => {
 
   return (
     <main className={styling.main}>
+      <div className={styling.mobileImg}>
+        <MobileImageSlider />
+      </div>
       <div className={styling.gallery}>
         <div className={styling.image} key={allInfo.id}>
           <img src={allInfo.image} alt="Single shoe" onClick={props.onOpen} />
@@ -42,7 +46,7 @@ const ProductGallery = (props) => {
         </div>
       </div>
 
-      <div >
+      <>
         <ProductInfo
           key={allInfo.id}
           title={allInfo.title}
@@ -52,7 +56,7 @@ const ProductGallery = (props) => {
           image={allInfo.image}
           discount={allInfo.discount}
         />
-      </div>
+      </>
     </main>
   );
 };
