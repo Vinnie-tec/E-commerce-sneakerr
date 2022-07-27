@@ -1,6 +1,7 @@
 {
-  "name": "react-course",
-  "version": "0.1.0",
+  "name": "sneakerr",
+  "version": "1.0.0",
+  "author": "Agboola Vincent",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
