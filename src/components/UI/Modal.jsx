@@ -9,7 +9,7 @@ const Backdrop = (props) => {
 
 const ModalOverlay = (props) => {
   return (
-    <div className={styling.modal}>
+    <div className={styling.modal} role="main">
       <div>{props.children}</div>
     </div>
   );

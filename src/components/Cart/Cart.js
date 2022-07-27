@@ -106,7 +106,7 @@ const Cart = (props) => {
       <p>
         <strong>Successfully send the order!</strong>
       </p>
-      <div className={styling.actions}>
+      <div className={styling.actions} role="button">
         <button className={styling.button} onClick={props.onCancel}>
           Close
         </button>
@@ -116,14 +116,13 @@ const Cart = (props) => {
 
   return (
     <>
-        <div className={styling.cart}>
-          <h4>Cart</h4>
-          {isEmpty && isEmptyModal}
-          {!isEmpty && !isSubmitting && !didSubmit && cartModalContent}
-          {isSubmitting && isSubmittingModalContent}
-          {!isSubmitting && didSubmit && didSubmittingModalContent}
-        </div>
-      
+      <div className={styling.cart}>
+        <h4>Cart</h4>
+        {isEmpty && isEmptyModal}
+        {!isEmpty && !isSubmitting && !didSubmit && cartModalContent}
+        {isSubmitting && isSubmittingModalContent}
+        {!isSubmitting && didSubmit && didSubmittingModalContent}
+      </div>
     </>
   );
 };

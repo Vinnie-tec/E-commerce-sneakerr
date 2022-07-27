@@ -33,7 +33,7 @@ const MobileImageSlider = ({ Data }) => {
         )
       )}
       </div>
-      <div className={styling.slideBtn}>
+      <div className={styling.slideBtn} role="button" aria-details="Button slider">
         <BtnSliderR moveSlide={prevSlide} direction={"prev"} />
         <BtnSliderR moveSlide={nextSlide} direction={"next"} />
       </div>

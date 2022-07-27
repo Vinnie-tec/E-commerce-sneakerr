@@ -1,10 +1,10 @@
 import React from "react";
 
-import styling from './HeaderNav.module.css';
+import styling from "./HeaderNav.module.css";
 
 const HeaderNav = () => {
   return (
-    <div role='navigation' className={styling.navs}>
+    <div role="navigation" className={styling.navs} aria-label="navigation">
       <nav className={styling.nav}>
         <li>
           <a href="/#">Collections</a>

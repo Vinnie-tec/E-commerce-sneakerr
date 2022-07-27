@@ -8,11 +8,11 @@ const CartList = (props) => {
   const amount = props.amount;
 
   const a = props.price * amount;
-  const itemTotalPrice = `# ${a.toFixed(2)}`
+  const itemTotalPrice = `# ${a.toFixed(2)}`;
 
   return (
     <div className={styling.main}>
-      <div className={styling.img}>
+      <div className={styling.img} role="img">
         <img src={props.image} alt="img" />
       </div>
 
@@ -27,7 +27,7 @@ const CartList = (props) => {
         </div>
       </div>
 
-      <div className={styling.closeButton}>
+      <div className={styling.closeButton} role="button">
         <button type="button" onClick={props.onDelete}>
           <img src={DelIcon} alt="btn" />
         </button>

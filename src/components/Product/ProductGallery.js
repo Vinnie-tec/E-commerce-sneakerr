@@ -19,18 +19,16 @@ const ProductGallery = (props) => {
 
   return (
     <main className={styling.main}>
-      <div className={styling.mobileImg}>
-        <MobileImageSlider
-          Data={Data}
-        />
+      <div className={styling.mobileImg} role="main">
+        <MobileImageSlider Data={Data} />
       </div>
       <div className={styling.gallery}>
-        <div className={styling.image} key={Math.floor(Math.random() * 100)}>
-          <img
-            src={allInfo.image}
-            alt="Single shoe"
-            onClick={props.onOpen}
-          />
+        <div
+          className={styling.image}
+          key={Math.floor(Math.random() * 100)}
+          role="img"
+        >
+          <img src={allInfo.image} alt="Single shoe" onClick={props.onOpen} />
         </div>
 
         <div className={styling.images}>
