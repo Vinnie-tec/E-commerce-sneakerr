@@ -98,7 +98,7 @@ const Checkout = (props) => {
   //////////////////////////////////////////////////////////////
   return (
     <form className={styling.form} onSubmit={confirmHandler}>
-      <div className={styling.scroll} role="form" aria-label='Add an address'>
+      <div className={styling.scroll}>
         <div className={nameControlClasses}>
           <label htmlFor="name">Enter Your Name</label>
           <input type="text" id="name" ref={nameInputRef} />
@@ -126,7 +126,7 @@ const Checkout = (props) => {
         </div>
       </div>
 
-      <div className={styling.btnActions} role="button">
+      <div className={styling.btnActions}>
         <button type="button" onClick={props.onClose} className={styling.cancel}>
           Cancel
         </button>

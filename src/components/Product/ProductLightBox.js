@@ -4,17 +4,17 @@ import BtnSlider from "../UI/BtnSlider";
 import Modal from "../UI/Modal";
 import styling from "./ProductLightBox.module.css";
 
-import Data from "../../store/Data";
+import images from "../../store/Data";
 
 function ProductLightBox(props) {
   const [slideIndex, setSlideIndex] = useState(1);
 
   const nextSlide = () => {
-    setSlideIndex(slideIndex !== Data.length ? slideIndex + 1 : 1);
+    setSlideIndex(slideIndex !== images.length ? slideIndex + 1 : 1);
   };
 
-  const prevSlide = () => {
-    setSlideIndex(slideIndex !== 1 ? slideIndex - 1 : Data.length);
+  const  prevSlide = () => {
+    setSlideIndex(slideIndex !== 1 ? slideIndex - 1 : images.length);
   };
 
   const moveDot = (index) => {
@@ -24,15 +24,11 @@ function ProductLightBox(props) {
   return (
     <Modal onClick={props.onClose}>
       <div className={styling.gallery}>
-        <div className={styling.image} role="button">
+        <div className={styling.image}>
+
           <div className={styling.closeBtn}>
             <button onClick={props.onClose}>
-              <svg
-                width="14"
-                height="15"
-                xmlns="http://www.w3.org/2000/svg"
-                role="button"
-              >
+              <svg width="14" height="15" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z"
                   fill="#fff"
@@ -41,15 +37,14 @@ function ProductLightBox(props) {
               </svg>
             </button>
           </div>
-
-          {Data.map((data, index) => {
+          
+          {images.map((data, index) => {
             return (
               <div
                 key={data.id}
                 className={
                   slideIndex === index + 1 ? "slide active-animate" : "slide"
                 }
-                role="img"
               >
                 <img
                   src={process.env.PUBLIC_URL + `/Imgs/image${index + 1}.jpg`}
@@ -64,8 +59,8 @@ function ProductLightBox(props) {
         </div>
 
         <div className={styling.images}>
-          {Data.map(({ image }, index) => (
-            <div role="img">
+          {images.map(({image}, index) => (
+            <div>
               <img
                 key={index}
                 src={image}

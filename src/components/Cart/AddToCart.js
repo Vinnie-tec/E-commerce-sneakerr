@@ -20,27 +20,27 @@ const AddToCart = (props) => {
     if (count === 0) {
       return;
     } else {
-      setCount(0);
+      setCount(0)
     }
-    props.onAddToCart(count);
-  };
+    props.onAddToCart(count)
+  }
 
   return (
     <div className={styling.addToCart}>
-      <div className={styling.toggleButton} role="button">
+      <div className={styling.toggleButton}>
         <button>
           <img src={SubtractBtn} alt="plus icon" onClick={decrement} />
         </button>
-        <p role="presentation">{count}</p>
+        <p>{count}</p>
         <button>
           <img src={AddBtn} alt="plus icon" onClick={increment} />
         </button>
       </div>
       <button className={styling.addButton} onClick={addToCartHandler}>
-        <span role="button">
+        <span>
           <CartIcon />
         </span>
-        <span role='button'>Add to cart</span>
+        <span>Add to cart</span>
       </button>
     </div>
   );

@@ -38,18 +38,18 @@ const Header = () => {
   return (
     <header className={styling.header}>
       {/* Mobile Nav Menu */}
-      <div className={styling.mobileMenuBtn} role="button"> 
+      <div className={styling.mobileMenuBtn}>
         <button className={styling.btnIcon} onClick={onOpenMenu}>
           <HeaderMenu />
         </button>
         {openMenu && (
-          <div className={styling.mobileMenu} role="navigation">
+          <div className={styling.mobileMenu}>
             <HeaderNavMobile onClose={onCloseMenu} />
           </div>
         )}
       </div>
 
-      <div className={styling.header_a} role="navigation" aria-label="Navigation">
+      <div className={styling.header_a}>
         <HeaderLogo />
         <HeaderNav />
       </div>
