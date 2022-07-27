@@ -32,7 +32,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [sneakerr.com](https://sneakerr.netlify.app/)
 
 ## My process
 
@@ -41,7 +41,6 @@ Users should be able to:
 - CSS custom properties
 - Flexbox
 - CSS Grid
-- Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
 
 ### Useful resources
@@ -50,7 +49,7 @@ Users should be able to:
 
 ## Author
 
-- Website - [Agboola Vincent](#)
+- Website - [Agboola Vincent](#/)
 - Frontend Mentor - [@Vinnie-tec](https://www.frontendmentor.io/profile/Vinnie-tec)
 - Twitter - [@VinnieOlamide](https://www.twitter.com/vinnieOlamide)
 - Linkedin - [@agboola-vincent](https://www.linkedin.com/in/agboola-vincent)
