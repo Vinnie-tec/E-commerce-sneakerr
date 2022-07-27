@@ -47,7 +47,7 @@
 @keyframes slide-down {
   from {
     opacity: 0;
-    transform: translateX(-5rem);
+    transform: translateX(0);
     
   }
 
@@ -62,7 +62,7 @@
   position: absolute;
   top: 5.1rem;
   left: 0;
-  opacity: 0;
+  opacity: 1;
   transition: opacity ease-in-out 0.5s;
 }
 
@@ -70,14 +70,6 @@
   width: 389px;
   height: 250px;
   object-fit: cover;
-}
-
-.activeAnimate {
-  opacity: 1;
-}
-
-.slideBtn {
-  margin-left: 3rem;
 }
 
 

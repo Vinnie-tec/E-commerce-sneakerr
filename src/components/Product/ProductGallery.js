@@ -15,33 +15,43 @@ const ProductGallery = (props) => {
     discount: Data[0].discount,
   });
 
+  // const [slideIndex, setSlideIndex] = useState(1);
+
   return (
     <main className={styling.main}>
       <div className={styling.mobileImg}>
-        <MobileImageSlider />
+        <MobileImageSlider
+          Data={Data}
+        />
       </div>
       <div className={styling.gallery}>
-        <div className={styling.image} key={allInfo.id}>
-          <img src={allInfo.image} alt="Single shoe" onClick={props.onOpen} />
+        <div className={styling.image} key={Math.floor(Math.random() * 100)}>
+          <img
+            src={allInfo.image}
+            alt="Single shoe"
+            onClick={props.onOpen}
+          />
         </div>
 
         <div className={styling.images}>
           {Data.map((data, index) => (
-            <img
-              key={index}
-              src={data.image}
-              alt="Shoes"
-              onClick={() => setAllInfo(data)}
-              className={"hoverClass"}
-              style={{
-                border:
-                  allInfo.image === data.image
-                    ? "3px solid hsl(26, 100%, 55%)"
-                    : "",
-                opacity: allInfo.image === data.image ? 0.5 : 1,
-                "--opacity": 0.5,
-              }}
-            />
+            <>
+              <img
+                key={index}
+                src={data.image}
+                alt="Shoes"
+                onClick={() => setAllInfo(data)}
+                className={"hoverClass"}
+                style={{
+                  border:
+                    allInfo.image === data.image
+                      ? "3px solid hsl(26, 100%, 55%)"
+                      : "",
+                  opacity: allInfo.image === data.image ? 0.5 : 1,
+                  "--opacity": 0.5,
+                }}
+              />
+            </>
           ))}
         </div>
       </div>

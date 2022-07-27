@@ -8,9 +8,9 @@ import styling from './ProductInfo.module.css';
 
 const ProductInfo = (props) => {
   const context = useContext(CartContext);
-  const price = `# ${props.price.toFixed(2)}`
+  const price = `NGN ${props.price.toFixed(2)}`
   const discountprice = (props.discount / 100) * props.price
-  const discountPrice = `# ${discountprice}`
+  const discountPrice = `NGN ${discountprice}`
  
 
   const addToCartHandler = count => {

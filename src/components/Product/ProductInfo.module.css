@@ -63,7 +63,7 @@
 @keyframes slide-down {
   from {
     opacity: 0;
-    transform: translateX(5rem);
+    transform: translateX(0);
     
   }
 
@@ -97,6 +97,13 @@
       flex-direction: column;
       margin-left: 0;
     }
+
+    .pricing_info {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding: 1rem 0;
+    }
   }
 
   @media (max-width: 375px) {
@@ -112,10 +119,7 @@
     }
 
     .pricing_info {
-      display: flex;
-      align-items: flex-start;
       justify-content: space-between;
-      padding: 1rem 0;
     }
   }
 

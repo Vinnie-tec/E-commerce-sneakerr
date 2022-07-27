@@ -1,41 +1,38 @@
-import React, { useState } from "react";
+import React, {useState } from "react";
 import BtnSliderR from "../UI/BtnSlider";
 
 import styling from "./ProductGallery.module.css";
 
-import images from "../../store/Data";
-
-const MobileImageSlider = () => {
+const MobileImageSlider = ({ Data }) => {
   const [slideIndex, setSlideIndex] = useState(1);
 
   const nextSlide = () => {
-    setSlideIndex(slideIndex !== images.length ? slideIndex + 1 : 1);
+    setSlideIndex(slideIndex !== Data.length ? slideIndex + 1 : 1);
   };
 
-  const prevSlide = () => {
-    setSlideIndex(slideIndex !== 1 ? slideIndex - 1 : images.length);
+  const  prevSlide = () => {
+    setSlideIndex(slideIndex !== 1 ? slideIndex - 1 : Data.length);
   };
 
   return (
     <div className={styling.mobileImg}>
-      {images.map((data, index) => {
-        return (
+      <div className={styling.shift}>
+      {Data.map((data, index) => (
           <div
             key={data.id}
             className={
-              slideIndex === index + 1
-                ? `${styling.shift} ${styling.activeAnimate}`
-                : styling.shift
+              slideIndex === index + 1 ? "slide active-animate" : "slide"
             }
           >
             <img
-              src={process.env.PUBLIC_URL + `/Imgs/image${index + 1}.jpg`}
+             src={data.image}
               alt={data.title}
               key={data.id}
             />
           </div>
-        );
-      })}
+        )
+      )}
+      </div>
       <div className={styling.slideBtn}>
         <BtnSliderR moveSlide={prevSlide} direction={"prev"} />
         <BtnSliderR moveSlide={nextSlide} direction={"next"} />

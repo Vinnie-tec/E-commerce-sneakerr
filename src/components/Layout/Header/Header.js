@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, Fragment } from "react";
 import CartIcon from "../../Cart/CartIcon";
 
 import CartContext from "../../../store/cart-context";
@@ -31,6 +31,10 @@ const Header = () => {
   const onOpenMenu = () => setOpenMenu(true);
   const onCloseMenu = () => setOpenMenu(false);
 
+  const Backdrop = () => {
+    return <div className={styling.backdrop}></div>;
+  };
+
   return (
     <header className={styling.header}>
       {/* Mobile Nav Menu */}
@@ -55,11 +59,18 @@ const Header = () => {
             <CartIcon />
             <span>{numberOfCartItems}</span>
           </button>
-          <div className={styling.cartBox}>
-            {showCart && (
-              <Cart onCancel={showCartHandler} cartNumber={numberOfCartItems} />
-            )}
-          </div>
+          {/* CART BOX */}
+          {showCart && (
+            <Fragment>
+              <Backdrop />
+              <div className={styling.cartBox}>
+                <Cart
+                  onCancel={showCartHandler}
+                  cartNumber={numberOfCartItems}
+                />
+              </div>
+            </Fragment>
+          )}
         </div>
 
         <div role="img" aria-label="Profile picture">

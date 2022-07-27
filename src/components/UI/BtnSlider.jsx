@@ -25,16 +25,6 @@ const leftSvgBtn = (
   </svg>
 );
 
-export const BtnSliderR = ({ direction, moveSlide }) => {
-  return (
-    <div className={direction === "next" ? styling.nextBtn : styling.prevBtn}>
-      <button onClick={moveSlide}>
-        {direction === "prev" ? leftSvgBtn : rightSvgBtn}
-      </button>
-    </div>
-  )
-}
-
 const BtnSlider = ({ direction, moveSlide }) => {
   return (
     <div className={direction === "next" ? styling.nextBtnN : styling.prevBtnN}>
@@ -46,3 +36,14 @@ const BtnSlider = ({ direction, moveSlide }) => {
 };
 
 export default BtnSlider;
+
+// FOR MOBILE SLIDE //
+export const BtnSliderR = ({ direction, moveSlide }) => {
+  return (
+    <div className={direction === "next" ? styling.nextBtn : styling.prevBtn}>
+      <button onClick={moveSlide}>
+        {direction === "prev" ? leftSvgBtn : rightSvgBtn}
+      </button>
+    </div>
+  )
+}
